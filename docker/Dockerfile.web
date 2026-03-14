@@ -51,8 +51,8 @@ COPY packages ./packages
 COPY apps/web ./apps/web
 
 # Build shared package and web app
-RUN pnpm --filter @app-shell/shared build
-RUN pnpm --filter @app-shell/web build
+RUN pnpm --filter @agent-irc/shared build
+RUN pnpm --filter @agent-irc/web build
 
 # =============================================================================
 # Production runtime stage

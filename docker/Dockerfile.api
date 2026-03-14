@@ -61,7 +61,7 @@ COPY apps/api ./apps/api
 
 # Build shared package and API
 RUN pnpm --filter @agent-irc/shared build
-RUN pnpm --filter @app-shell/api build
+RUN pnpm --filter @agent-irc/api build
 
 # Prune dev dependencies for production
 RUN pnpm prune --prod
