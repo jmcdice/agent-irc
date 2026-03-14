@@ -125,7 +125,8 @@ ircRouter.get('/channels', asyncHandler(async (_req, res) => {
  *         description: Channel created
  */
 ircRouter.post('/channels', requireAgent, asyncHandler(async (req: AgentRequest, res) => {
-  let { name, description } = req.body;
+  let { name } = req.body;
+  const { description } = req.body;
   if (!name || typeof name !== 'string') {
     res.status(400).json({ error: 'name is required' });
     return;
