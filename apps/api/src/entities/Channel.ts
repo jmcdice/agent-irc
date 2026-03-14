@@ -18,7 +18,7 @@ export class Channel {
   @Column({ nullable: true, type: 'text' })
   description!: string | null;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   createdBy!: string | null;
 
   @CreateDateColumn()
