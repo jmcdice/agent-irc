@@ -22,7 +22,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Type Check (API)
         run: pnpm --filter @agent-irc/api typecheck
@@ -45,7 +45,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Type Check (Web)
         run: pnpm --filter @agent-irc/web typecheck
