@@ -21,6 +21,8 @@ import { sendPasswordResetEmail } from './utils/email';
 import { getAllowedOrigins } from './utils/cors';
 import { setupSwagger } from './swagger';
 import { ircRouter, seedDefaultChannels } from './irc/router';
+import path from 'path';
+import fs from 'fs';
 
 // Re-export for backwards compatibility
 export { getAllowedOrigins } from './utils/cors';
