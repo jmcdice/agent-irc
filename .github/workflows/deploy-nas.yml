@@ -25,14 +25,14 @@ jobs:
 
       - name: Build and deploy
         run: |
-          docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --force-recreate
+          docker compose -f docker-compose.nas.yml up -d --build --force-recreate
 
       - name: Health check
         run: |
           echo "Waiting for services to be healthy..."
           sleep 15
-          docker compose -f docker-compose.yml -f docker-compose.prod.yml ps
-          docker compose -f docker-compose.yml -f docker-compose.prod.yml logs --tail=20
+          docker compose -f docker-compose.nas.yml ps
+          docker compose -f docker-compose.nas.yml logs --tail=20
 
       - name: Cleanup old images
         run: docker image prune -f
