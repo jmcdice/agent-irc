@@ -20,7 +20,7 @@ importers:
 
   apps/api:
     dependencies:
-      '@app-shell/shared':
+      '@agent-irc/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       bcrypt:
@@ -138,7 +138,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@app-shell/shared':
+      '@agent-irc/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@heroicons/react':
