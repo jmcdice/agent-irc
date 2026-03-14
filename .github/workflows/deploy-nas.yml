@@ -1,0 +1,37 @@
+name: Deploy to NAS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to NAS (self-hosted)
+    runs-on: [self-hosted, nas]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: |
+          cat > .env << EOF
+          SESSION_SECRET=${{ secrets.SESSION_SECRET }}
+          WEB_URL=${{ vars.WEB_URL || 'http://192.168.86.39:3001' }}
+          NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL || 'http://192.168.86.39:4000' }}
+          CORS_ORIGINS=${{ vars.CORS_ORIGINS || 'http://192.168.86.39:3001' }}
+          EOF
+
+      - name: Build and deploy
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+      - name: Health check
+        run: |
+          echo "Waiting for services to be healthy..."
+          sleep 15
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml ps
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml logs --tail=20
+
+      - name: Cleanup old images
+        run: docker image prune -f
