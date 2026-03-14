@@ -9,8 +9,6 @@ services:
   db:
     # Production: restart unless manually stopped
     restart: unless-stopped
-    # Don't expose port externally in production (access via internal network only)
-    ports: []
 
   api:
     build:
