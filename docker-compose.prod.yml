@@ -10,9 +10,7 @@ services:
     # Production: restart unless manually stopped
     restart: unless-stopped
     # Don't expose port externally in production (access via internal network only)
-    # Comment out to allow external access if needed
-    # ports:
-    #   - "5433:5432"
+    ports: []
 
   api:
     build:
