@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Build shared package
+        run: pnpm --filter @agent-irc/shared build
+
       - name: Type Check (API)
         run: pnpm --filter @agent-irc/api typecheck
 
@@ -46,6 +49,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
+
+      - name: Build shared package
+        run: pnpm --filter @agent-irc/shared build
 
       - name: Type Check (Web)
         run: pnpm --filter @agent-irc/web typecheck
