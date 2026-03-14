@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 18px; /* Bump from default 16px - scales all rem-based sizes */
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground overscroll-none;
+  }
+}
+
+/* Import theme system - AFTER tailwind layers so themes take precedence */
+@import './theme.css';
+
+/* Documentation code highlighting styles - Light/Dark adaptive */
+@layer components {
+  /* Code block base */
+  .docs-content pre code.hljs {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .docs-content code.hljs {
+    padding: 0;
+  }
+
+  /* ===== LIGHT MODE - GitHub Light style ===== */
+  .docs-content .hljs {
+    color: #24292f;
+    background: transparent;
+  }
+
+  .docs-content .hljs-comment,
+  .docs-content .hljs-quote {
+    color: #6e7781;
+    font-style: italic;
+  }
+
+  .docs-content .hljs-keyword,
+  .docs-content .hljs-selector-tag,
+  .docs-content .hljs-addition {
+    color: #cf222e;
+  }
+
+  .docs-content .hljs-number,
+  .docs-content .hljs-string,
+  .docs-content .hljs-meta .hljs-meta-string,
+  .docs-content .hljs-literal,
+  .docs-content .hljs-doctag,
+  .docs-content .hljs-regexp {
+    color: #0a3069;
+  }
+
+  .docs-content .hljs-title,
+  .docs-content .hljs-section,
+  .docs-content .hljs-name,
+  .docs-content .hljs-selector-id,
+  .docs-content .hljs-selector-class {
+    color: #8250df;
+  }
+
+  .docs-content .hljs-attribute,
+  .docs-content .hljs-attr,
+  .docs-content .hljs-variable,
+  .docs-content .hljs-template-variable,
+  .docs-content .hljs-class .hljs-title,
+  .docs-content .hljs-type {
+    color: #0550ae;
+  }
+
+  .docs-content .hljs-symbol,
+  .docs-content .hljs-bullet,
+  .docs-content .hljs-subst,
+  .docs-content .hljs-meta,
+  .docs-content .hljs-meta .hljs-keyword,
+  .docs-content .hljs-selector-attr,
+  .docs-content .hljs-selector-pseudo,
+  .docs-content .hljs-link {
+    color: #953800;
+  }
+
+  .docs-content .hljs-built_in,
+  .docs-content .hljs-deletion {
+    color: #cf222e;
+  }
+
+  .docs-content .hljs-params {
+    color: #24292f;
+  }
+
+  .docs-content .hljs-property {
+    color: #116329;
+  }
+
+  /* ===== DARK MODE - Terminal style with bright colors ===== */
+  :is(.dark) .docs-content .hljs {
+    color: #e6edf3;
+    background: transparent;
+  }
+
+  :is(.dark) .docs-content .hljs-comment,
+  :is(.dark) .docs-content .hljs-quote {
+    color: #8b949e;
+    font-style: italic;
+  }
+
+  :is(.dark) .docs-content .hljs-keyword,
+  :is(.dark) .docs-content .hljs-selector-tag,
+  :is(.dark) .docs-content .hljs-addition {
+    color: #ff7b72;
+  }
+
+  :is(.dark) .docs-content .hljs-number,
+  :is(.dark) .docs-content .hljs-string,
+  :is(.dark) .docs-content .hljs-meta .hljs-meta-string,
+  :is(.dark) .docs-content .hljs-literal,
+  :is(.dark) .docs-content .hljs-doctag,
+  :is(.dark) .docs-content .hljs-regexp {
+    color: #a5d6ff;
+  }
+
+  :is(.dark) .docs-content .hljs-title,
+  :is(.dark) .docs-content .hljs-section,
+  :is(.dark) .docs-content .hljs-name,
+  :is(.dark) .docs-content .hljs-selector-id,
+  :is(.dark) .docs-content .hljs-selector-class {
+    color: #d2a8ff;
+  }
+
+  :is(.dark) .docs-content .hljs-attribute,
+  :is(.dark) .docs-content .hljs-attr,
+  :is(.dark) .docs-content .hljs-variable,
+  :is(.dark) .docs-content .hljs-template-variable,
+  :is(.dark) .docs-content .hljs-class .hljs-title,
+  :is(.dark) .docs-content .hljs-type {
+    color: #79c0ff;
+  }
+
+  :is(.dark) .docs-content .hljs-symbol,
+  :is(.dark) .docs-content .hljs-bullet,
+  :is(.dark) .docs-content .hljs-subst,
+  :is(.dark) .docs-content .hljs-meta,
+  :is(.dark) .docs-content .hljs-meta .hljs-keyword,
+  :is(.dark) .docs-content .hljs-selector-attr,
+  :is(.dark) .docs-content .hljs-selector-pseudo,
+  :is(.dark) .docs-content .hljs-link {
+    color: #ffa657;
+  }
+
+  :is(.dark) .docs-content .hljs-built_in,
+  :is(.dark) .docs-content .hljs-deletion {
+    color: #ffa198;
+  }
+
+  :is(.dark) .docs-content .hljs-params {
+    color: #e6edf3;
+  }
+
+  :is(.dark) .docs-content .hljs-property {
+    color: #7ee787;
+  }
+
+  .docs-content .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .docs-content .hljs-strong {
+    font-weight: bold;
+  }
+}
+

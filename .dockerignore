@@ -1,0 +1,51 @@
+# Dependencies - installed inside container
+node_modules
+**/node_modules
+
+# Build outputs - rebuilt inside container
+.next
+**/.next
+dist
+**/dist
+.turbo
+**/.turbo
+
+# Build info files
+*.tsbuildinfo
+
+# Version control
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage
+**/coverage
+
+# Environment files (use docker-compose env instead)
+.env
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+*.md
+docs
+
+# Development scripts (not needed in container)
+dev.sh
+

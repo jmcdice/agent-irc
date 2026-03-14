@@ -1,0 +1,37 @@
+FROM node:20-alpine AS base
+
+# Install system dependencies
+RUN apk add --no-cache bash
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+
+# Development stage
+FROM base AS dev
+WORKDIR /app
+
+# Step 1: Copy ONLY files needed for pnpm install (maximizes cache hits)
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY turbo.json ./
+
+# Copy package.json files only (not source code yet)
+COPY packages/shared/package.json ./packages/shared/
+COPY apps/worker/package.json ./apps/worker/
+
+# Step 2: Install dependencies (cached unless package.json/lockfile changes)
+RUN pnpm install --frozen-lockfile
+
+# Step 3: Copy source code (changes frequently, but doesn't invalidate install cache)
+COPY packages ./packages
+COPY apps/worker ./apps/worker
+
+# Build shared packages (required for workspace dependencies)
+RUN pnpm --filter @se-command-center/shared build
+
+# Copy development entrypoint script
+COPY docker/entrypoint-worker-dev.sh /entrypoint-worker-dev.sh
+RUN chmod +x /entrypoint-worker-dev.sh
+
+# Use entrypoint to rebuild packages on start, then run worker
+ENTRYPOINT ["/entrypoint-worker-dev.sh"]
+

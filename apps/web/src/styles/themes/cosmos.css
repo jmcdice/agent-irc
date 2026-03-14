@@ -1,0 +1,129 @@
+/* Cosmos theme - Deep space dark with indigo/purple accents
+   Inspired by RFP Solver's sleek dark-first design
+   Primary: Indigo (#6366f1), Secondary: Purple gradient (#a855f7)
+   Background: Deep gray-900, Cards: Elevated gray-800 */
+
+/* ============================================
+   LIGHT MODE
+   ============================================
+   Light mode inverts the palette while keeping
+   the indigo/purple accent character */
+[data-theme='cosmos'] {
+  /* --- Page Backgrounds & Text --- */
+  --background: #f1f5f9;           /* Slate-100: Cool light gray */
+  --foreground: #0f172a;           /* Slate-900: Near black */
+
+  /* --- Card & Container Surfaces --- */
+  --card: #ffffff;                 /* Pure white for elevation */
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+
+  /* --- Interactive Elements (Brand: Indigo) --- */
+  --primary: #4f46e5;              /* Indigo-600 */
+  --primary-foreground: #ffffff;
+  --secondary: #e0e7ff;            /* Indigo-100 */
+  --secondary-foreground: #3730a3; /* Indigo-800 */
+  --accent: #c7d2fe;               /* Indigo-200 */
+  --accent-foreground: #3730a3;
+
+  /* --- Muted/Subdued --- */
+  --muted: #e2e8f0;                /* Slate-200 */
+  --muted-foreground: #64748b;     /* Slate-500 */
+
+  /* --- Form Elements --- */
+  --input: #cbd5e1;                /* Slate-300 */
+  --border: #e2e8f0;               /* Slate-200 */
+  --ring: #6366f1;                 /* Indigo-500 */
+
+  /* --- Semantic Colors --- */
+  --destructive: #dc2626;          /* Red-600 */
+  --destructive-foreground: #ffffff;
+  --success: #16a34a;              /* Green-600 */
+  --success-foreground: #ffffff;
+  --warning: #ca8a04;              /* Yellow-600 */
+  --warning-foreground: #ffffff;
+
+  /* --- Sidebar --- */
+  --sidebar-background: #f8fafc;   /* Slate-50 */
+  --sidebar-foreground: #334155;   /* Slate-700 */
+  --sidebar-primary: #4f46e5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0e7ff;
+  --sidebar-accent-foreground: #3730a3;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #6366f1;
+
+  /* --- Charts --- */
+  --chart-1: #6366f1;              /* Indigo-500 */
+  --chart-2: #a855f7;              /* Purple-500 */
+  --chart-3: #22c55e;              /* Green-500 */
+  --chart-4: #f59e0b;              /* Amber-500 */
+  --chart-5: #ec4899;              /* Pink-500 */
+
+  /* --- Layout --- */
+  --radius: 0.5rem;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================
+   The "true" Cosmos experience - deep space dark
+   with glowing indigo/purple accents */
+[data-theme='cosmos'].dark {
+  /* --- Page Backgrounds & Text --- */
+  --background: #0f172a;           /* Slate-900: Deep space */
+  --foreground: #f1f5f9;           /* Slate-100: Bright text */
+
+  /* --- Card & Container Surfaces --- */
+  --card: #1e293b;                 /* Slate-800: Elevated surface */
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+
+  /* --- Interactive Elements (Brand: Indigo) --- */
+  --primary: #6366f1;              /* Indigo-500: Brighter in dark */
+  --primary-foreground: #ffffff;
+  --secondary: #334155;            /* Slate-700 */
+  --secondary-foreground: #f1f5f9;
+  --accent: #312e81;               /* Indigo-900 with some glow */
+  --accent-foreground: #c7d2fe;    /* Indigo-200 */
+
+  /* --- Muted/Subdued --- */
+  --muted: #334155;                /* Slate-700 */
+  --muted-foreground: #94a3b8;     /* Slate-400 */
+
+  /* --- Form Elements --- */
+  --input: #475569;                /* Slate-600 */
+  --border: #334155;               /* Slate-700 */
+  --ring: #818cf8;                 /* Indigo-400 */
+
+  /* --- Semantic Colors --- */
+  --destructive: #ef4444;          /* Red-500: More vivid in dark */
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;              /* Green-500 */
+  --success-foreground: #0f172a;
+  --warning: #f59e0b;              /* Amber-500 */
+  --warning-foreground: #0f172a;
+
+  /* --- Sidebar --- */
+  --sidebar-background: #0a0f1c;   /* Darker than main background */
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #818cf8;      /* Indigo-400 */
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #334155;
+  --sidebar-ring: #818cf8;
+
+  /* --- Charts --- */
+  --chart-1: #818cf8;              /* Indigo-400 */
+  --chart-2: #c084fc;              /* Purple-400 */
+  --chart-3: #4ade80;              /* Green-400 */
+  --chart-4: #fbbf24;              /* Amber-400 */
+  --chart-5: #f472b6;              /* Pink-400 */
+
+  /* --- Layout --- */
+  --radius: 0.5rem;
+}
+

@@ -1,0 +1,126 @@
+/* =============================================================================
+   THEME TEMPLATE
+   
+   Instructions:
+   1. Copy this file and rename to [your-theme-name].css
+   2. Replace 'THEME_NAME' with your theme identifier (lowercase, no spaces)
+   3. Fill in all color values
+   4. Import in theme.css: @import './themes/[your-theme-name].css';
+   5. Register in theme.config.ts
+   
+   See THEME-CREATION-GUIDE.md for detailed documentation.
+   ============================================================================= */
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+[data-theme='THEME_NAME'] {
+  /* --- Page Backgrounds & Text --- */
+  --background: #f5f5f5;           /* Main page background (light gray/off-white) */
+  --foreground: #1a1a1a;           /* Primary text color (near black) */
+
+  /* --- Card & Container Surfaces --- */
+  --card: #ffffff;                 /* Card backgrounds (brighter than --background) */
+  --card-foreground: #1a1a1a;      /* Text on cards */
+  --popover: #ffffff;              /* Dropdown/modal backgrounds */
+  --popover-foreground: #1a1a1a;   /* Text in popovers */
+
+  /* --- Interactive Elements (Brand) --- */
+  --primary: #2563eb;              /* Primary buttons, links (your brand color) */
+  --primary-foreground: #ffffff;   /* Text on primary buttons */
+  --secondary: #e5e7eb;            /* Secondary buttons */
+  --secondary-foreground: #1f2937; /* Text on secondary buttons */
+  --accent: #dbeafe;               /* Hover states, highlights */
+  --accent-foreground: #1e40af;    /* Text on accented elements */
+
+  /* --- Muted/Subdued --- */
+  --muted: #f3f4f6;                /* Muted backgrounds (badges, subtle areas) */
+  --muted-foreground: #6b7280;     /* Secondary/subdued text */
+
+  /* --- Form Elements --- */
+  --input: #d1d5db;                /* Input borders */
+  --border: #e5e7eb;               /* General borders */
+  --ring: #2563eb;                 /* Focus ring color (usually matches primary) */
+
+  /* --- Semantic Colors --- */
+  --destructive: #dc2626;          /* Error/delete actions */
+  --destructive-foreground: #ffffff;
+  /* --success: #22c55e; */
+  /* --success-foreground: #ffffff; */
+  /* --warning: #f59e0b; */
+  /* --warning-foreground: #ffffff; */
+
+  /* --- Sidebar --- */
+  --sidebar-background: #fafafa;
+  --sidebar-foreground: #374151;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #1f2937;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #2563eb;
+
+  /* --- Charts (optional - uncomment if using charts) --- */
+  /* --chart-1: #3b82f6; */
+  /* --chart-2: #10b981; */
+  /* --chart-3: #f59e0b; */
+  /* --chart-4: #ef4444; */
+  /* --chart-5: #8b5cf6; */
+
+  /* --- Layout --- */
+  --radius: 0.5rem;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme='THEME_NAME'].dark {
+  /* --- Page Backgrounds & Text --- */
+  --background: #0f0f0f;           /* Dark page background */
+  --foreground: #fafafa;           /* Light text color */
+
+  /* --- Card & Container Surfaces --- */
+  --card: #1a1a1a;                 /* Slightly lighter than background */
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+
+  /* --- Interactive Elements (Brand) --- */
+  --primary: #3b82f6;              /* Often lighter/more vivid in dark mode */
+  --primary-foreground: #ffffff;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --accent: #1e3a5f;
+  --accent-foreground: #93c5fd;
+
+  /* --- Muted/Subdued --- */
+  --muted: #262626;                /* Slightly lighter than background */
+  --muted-foreground: #a1a1aa;     /* Dimmed but readable text */
+
+  /* --- Form Elements --- */
+  --input: #3f3f46;
+  --border: #27272a;               /* Slightly lighter than background */
+  --ring: #3b82f6;
+
+  /* --- Semantic Colors --- */
+  --destructive: #ef4444;          /* Often more vivid in dark mode */
+  --destructive-foreground: #ffffff;
+  /* --success: #22c55e; */
+  /* --success-foreground: #0f0f0f; */
+  /* --warning: #f59e0b; */
+  /* --warning-foreground: #0f0f0f; */
+
+  /* --- Sidebar --- */
+  --sidebar-background: #0a0a0a;   /* Often darker than main background */
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+
+  /* --- Layout --- */
+  --radius: 0.5rem;
+}
+

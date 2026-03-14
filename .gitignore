@@ -1,0 +1,122 @@
+# Repo tmp files
+scratch/
+temp/
+tmp/
+
+# AI agent scratch files
+*.scratch.*
+*-plan.md
+*-implementation-plan.md
+*.bak
+*.backup
+*.tmp
+*.temp
+bleh.*
+test-*.sh
+debug-*.sh
+fix-*.sh
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+._*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Turbo
+.turbo/
+
+# Docker volumes (local)
+.docker-data/
+
+# Cache directories
+.cache/
+.eslintcache
+.stylelintcache
+*.cache
+
+# Debug files
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Storybook build
+storybook-static/
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Vitest
+.vitest/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# TypeORM
+*.sqlite
+*.sqlite3
+
+# Secrets (extra safety)
+*.pem
+*.key
+secrets/
+
+# Misc AI/agent generated files
+*.draft.*
+*.old
+*.orig
+NOTES.md
+TODO.md
+SCRATCH.md
+notes.txt
+todo.txt
