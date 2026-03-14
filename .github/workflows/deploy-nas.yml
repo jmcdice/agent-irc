@@ -20,7 +20,6 @@ jobs:
           WEB_URL=${{ vars.WEB_URL || 'http://192.168.86.39:3001' }}
           NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL || 'http://192.168.86.39:4001' }}
           CORS_ORIGINS=${{ vars.CORS_ORIGINS || 'http://192.168.86.39:3001' }}
-          DB_PORT=5434
           EOF
 
       - name: Build and deploy

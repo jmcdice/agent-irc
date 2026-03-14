@@ -13,7 +13,7 @@ services:
       POSTGRES_USER: ${DB_USER:-app_user}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-app_pass}
     ports:
-      - "${DB_PORT:-5434}:5432"
+      - "5434:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
@@ -34,9 +34,9 @@ services:
     environment:
       NODE_ENV: production
       PORT: 4000
-      DATABASE_URL: ${DATABASE_URL:-postgres://app_user:app_pass@db:5432/app_db}
-      DB_HOST: ${DB_HOST:-db}
-      DB_PORT: ${DB_PORT:-5432}
+      DATABASE_URL: postgres://${DB_USER:-app_user}:${DB_PASSWORD:-app_pass}@db:5432/${DB_NAME:-app_db}
+      DB_HOST: db
+      DB_PORT: "5432"
       DB_USER: ${DB_USER:-app_user}
       DB_PASSWORD: ${DB_PASSWORD:-app_pass}
       DB_NAME: ${DB_NAME:-app_db}
